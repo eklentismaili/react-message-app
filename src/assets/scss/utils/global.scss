@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(./font/Montserrat-Regular.ttf);
+}
+
+body {
+  font-family: 'Montserrat';
+  background-attachment: fixed;
+  color: $medium-purple;
+}
+
+a {
+  text-decoration: none;
+  color: $light-purple;
+}
+
+a:hover {
+  color: $orange;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
