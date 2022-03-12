@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { updateDoc, doc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Img from '../assets/images/icons/login-img.png';
 
 function Login() {
   let navigate = useNavigate();
@@ -51,34 +52,59 @@ function Login() {
   };
 
   return (
-    <section>
-      <h3>Log Into Your Account</h3>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
+    <section className="container login">
+      <div className="form-wrapper">
+        <div className="form-intro">
+          <div className="form-intro-text">
+            <h4>Welcome Back !</h4>
+            <p>Sign In To Continue Using This Chat.</p>
+            <small className="fw-bolder">
+              Make sure to be registered first!
+            </small>
+          </div>
+
+          <img src={Img} alt="Login Image" className="form-intro-image" />
         </div>
-        <div className="input-container">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-          />
-        </div>
-        {form.error ? <p className="error">{form.error}</p> : null}
-        <div className="btn-container">
-          <button className="btn" type="submit" disabled={loading}>
-            {loading ? 'Logging-in ...' : 'Login'}
-          </button>
-        </div>
-      </form>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
+            <input
+              type="text"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          {form.error ? <p className="error">{form.error}</p> : null}
+          <div className="btn-container">
+            <button className="btn" type="submit" disabled={loading}>
+              {loading ? 'Logging-in ...' : 'Login'}
+            </button>
+          </div>
+
+          <p className="text-center mt-2 fw-bolder">
+            Didn't register yet?{' '}
+            <Link to="/register" className="register">
+              Register
+            </Link>
+          </p>
+        </form>
+      </div>
     </section>
   );
 }

@@ -7,17 +7,23 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    .navigation-avatar {
-      width: 30px;
-      border-radius: 50%;
-    }
+    .navigation-links {
+      a {
+        padding-left: 20px;
+      }
 
-    .logout-btn {
-      color: $primary;
-    }
+      .navigation-avatar {
+        width: 30px;
+        border-radius: 50%;
+      }
 
-    .logout-btn:hover {
-      color: $tertiary;
+      .logout-btn {
+        color: $primary;
+      }
+
+      .logout-btn:hover {
+        color: $tertiary;
+      }
     }
   }
 }

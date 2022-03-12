@@ -6,8 +6,10 @@ import { updateDoc, doc } from 'firebase/firestore';
 import { AuthContext } from '../providers/Auth';
 import { useNavigate } from 'react-router-dom';
 import Chat from './Chat';
-import Img from '../assets/images/icons/myAvatar.svg';
+import Img from '../assets/images/icons/avatar-orange.jpeg';
 import Logout from './Logout';
+import Login from './Login';
+import Register from './Register';
 
 function Navbar() {
   let navigate = useNavigate();
@@ -41,8 +43,12 @@ function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/register">Register</Link>
-              <Link to="/login">Login</Link>
+              <Link to="/register">
+                <Register />
+              </Link>
+              <Link to="/login">
+                <Login />
+              </Link>
             </>
           )}
         </div>

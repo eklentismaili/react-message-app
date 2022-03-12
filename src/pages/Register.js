@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { setDoc, doc, Timestamp } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Img from '../assets/images/icons/login-img.png';
 
 function Register() {
   let navigate = useNavigate();
@@ -57,43 +58,72 @@ function Register() {
   };
 
   return (
-    <section>
-      <h3>Create An Account</h3>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-          />
+    <section className="container register">
+      <div className="form-wrapper">
+        <div className="form-intro">
+          <div className="form-intro-text">
+            <h4>Free Register!</h4>
+            <p>Get Your Free Chat Account Now.</p>
+            <small className="fw-bolder">
+              Make sure to fill all fields first!
+            </small>
+          </div>
+
+          <img src={Img} alt="Login Image" className="form-intro-image" />
         </div>
-        <div className="input-container">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-          />
-        </div>
-        {form.error ? <p className="error">{form.error}</p> : null}
-        <div className="btn-container">
-          <button className="btn" type="submit" disabled={loading}>
-            {loading ? 'Creating ...' : 'Register'}
-          </button>
-        </div>
-      </form>
+
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
+            <input
+              type="text"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          {form.error ? <p className="error">{form.error}</p> : null}
+          <div className="btn-container">
+            <button className="btn" type="submit" disabled={loading}>
+              {loading ? 'Creating ...' : 'Register'}
+            </button>
+          </div>
+
+          <p className="text-center mt-2 fw-bolder">
+            Already have an account?{' '}
+            <Link to="/login" className="login">
+              Log In
+            </Link>
+          </p>
+        </form>
+      </div>
     </section>
   );
 }
