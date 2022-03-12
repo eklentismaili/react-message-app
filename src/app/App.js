@@ -1,9 +1,12 @@
+import AuthProvider from '../providers/Auth';
 import Routes from './Routes';
 
 export default function App() {
   return (
-    <div className="app">
-      <Routes />
-    </div>
+    <AuthProvider>
+      <div className="app">
+        <Routes />
+      </div>
+    </AuthProvider>
   );
 }

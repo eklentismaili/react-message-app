@@ -1,0 +1,23 @@
+header {
+  height: 80px;
+  background-color: $secondary;
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navigation-avatar {
+      width: 30px;
+      border-radius: 50%;
+    }
+
+    .logout-btn {
+      color: $primary;
+    }
+
+    .logout-btn:hover {
+      color: $tertiary;
+    }
+  }
+}

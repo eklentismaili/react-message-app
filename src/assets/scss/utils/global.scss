@@ -6,16 +6,16 @@
 body {
   font-family: 'Montserrat';
   background-attachment: fixed;
-  color: $medium-purple;
+  // color: $medium-purple;
 }
 
 a {
   text-decoration: none;
-  color: $light-purple;
+  color: $primary;
 }
 
 a:hover {
-  color: $orange;
+  color: $tertiary;
 }
 
 ul {
