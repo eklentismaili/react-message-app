@@ -1,0 +1,29 @@
+.message-wrapper {
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+
+  .message-text {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+
+    small {
+      font-size: 10px;
+    }
+  }
+}
+
+.own {
+  justify-content: flex-end;
+}
+
+.own-text {
+  background-color: $secondary;
+  color: $primary;
+}
+
+.friend-text {
+  background-color: #e3e3e3;
+  color: #000;
+}

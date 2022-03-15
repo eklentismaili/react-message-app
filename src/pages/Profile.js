@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
-import profile from '../assets/images/icons/profile.png';
+import { useState, useEffect, useContext } from 'react';
+import profile from '../assets/images/icons/avatar-orange.jpeg';
 import Camera from '../components/Camera';
 import { storage } from '../firebase';
 import { ref, getDownloadURL, uploadBytes } from 'firebase/storage';
+import { AuthContext } from '../providers/Auth';
 function Profile() {
   const [img, setImg] = useState('');
+
+  const { user } = useContext(AuthContext);
+
   console.log(img);
   useEffect(() => {
     if (img) {
@@ -24,8 +28,8 @@ function Profile() {
 
   return (
     <section>
-      <div className="profile-container">
-        <div className="image-container">
+      <div className="profile-container container d-flex">
+        <div className="image-container d-flex">
           <img src={profile} alt="Avatar" />
           <div className="overlay">
             <div>
@@ -43,10 +47,10 @@ function Profile() {
           </div>
         </div>
         <div className="text-container">
-          <h3>User name</h3>
-          <p>User email</p>
+          <h3>{user.name}</h3>
+          <p>{user.email}</p>
           <hr />
-          <small>Joined on: ....</small>
+          <small>Joined on: {user.metadata.creationTime}</small>
         </div>
       </div>
     </section>

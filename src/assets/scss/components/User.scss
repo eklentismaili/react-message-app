@@ -1,0 +1,40 @@
+.user-wrapper {
+  border: 1px solid #e3e3e3;
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 16px 5px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 3px 3px 16px 5px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 3px 3px 16px 5px rgba(0, 0, 0, 0.08);
+
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h6 {
+        margin-left: 10px;
+        font-weight: 700;
+      }
+    }
+
+    .user-status {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .user-status-online {
+      background-color: #5cb85c;
+    }
+
+    .user-status-offline {
+      background-color: #d9534f;
+    }
+  }
+}

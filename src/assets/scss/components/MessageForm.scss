@@ -1,0 +1,25 @@
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    width: calc(100% - 90px);
+    input {
+      width: 100%;
+    }
+  }
+
+  .send-message {
+    border: none;
+    height: 36px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  .send-message[disabled] {
+    opacity: 0.4;
+  }
+}

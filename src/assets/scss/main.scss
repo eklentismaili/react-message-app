@@ -1,7 +1,11 @@
 @import './vendors/bootstrap.scss';
 @import './utils/variables.scss';
 @import './utils/global.scss';
+@import './pages/Home.scss';
 @import './pages/Login.scss';
 @import './pages/Profile.scss';
 @import './pages/Register.scss';
+@import './components/Message.scss';
+@import './components/MessageForm.scss';
 @import './components/Navbar.scss';
+@import './components/User.scss';

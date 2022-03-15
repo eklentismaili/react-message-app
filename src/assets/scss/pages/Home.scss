@@ -1,0 +1,12 @@
+.home-container {
+  margin: 100px auto;
+
+  .users-tab,
+  .messages {
+    height: calc(100vh - 400px);
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+  }
+}
