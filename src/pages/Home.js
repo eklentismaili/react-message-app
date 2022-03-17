@@ -27,9 +27,9 @@ function Home() {
   useEffect(() => {
     const usersRef = collection(db, 'users');
     //collect query object
-    const q = query(usersRef, where('uid', 'not-in', [auth.currentUser.uid]));
+    const qq = query(usersRef, where('uid', 'not-in', [auth.currentUser.uid]));
     // execute query
-    const unsub = onSnapshot(q, querySnapshot => {
+    const unsub = onSnapshot(qq, querySnapshot => {
       let users = [];
       querySnapshot.forEach(doc => {
         users.push(doc.data());
@@ -37,12 +37,6 @@ function Home() {
 
       setUsers(prev => (prev = users));
     });
-
-    return () => unsub();
-  }, [chat]);
-
-  const selectUser = user => {
-    setChat(prev => (prev = user));
 
     const id =
       ownUid > selectedUser
@@ -61,6 +55,13 @@ function Home() {
 
       setMsgs(prev => (prev = msgs));
     });
+
+    return () => unsub();
+  }, [chat]);
+
+  const selectUser = user => {
+    setChat(prev => (prev = user));
+    console.log(user);
   };
 
   const handleSubmit = async e => {
