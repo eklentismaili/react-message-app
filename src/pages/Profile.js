@@ -8,8 +8,6 @@ function Profile() {
   const [img, setImg] = useState('');
 
   const { user } = useContext(AuthContext);
-
-  console.log(img);
   useEffect(() => {
     if (img) {
       const uploadImg = async () => {
@@ -19,7 +17,6 @@ function Profile() {
         );
 
         const snap = await uploadBytes(imgRef, img);
-        console.log(snap.ref.fullPath);
       };
 
       uploadImg();

@@ -53,8 +53,6 @@ function Register() {
         loading: false,
       }));
     }
-
-    console.log(form);
   };
 
   return (

@@ -42,7 +42,6 @@ function Home() {
   }, [chat]);
 
   const selectUser = user => {
-    console.log(user.name);
     setChat(prev => (prev = user));
 
     const id =
@@ -63,8 +62,6 @@ function Home() {
       setMsgs(prev => (prev = msgs));
     });
   };
-
-  console.log(msgs);
 
   const handleSubmit = async e => {
     e.preventDefault();

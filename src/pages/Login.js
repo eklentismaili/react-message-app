@@ -47,8 +47,6 @@ function Login() {
         loading: false,
       }));
     }
-
-    console.log(form);
   };
 
   return (
